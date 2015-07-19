@@ -1,8 +1,7 @@
 {
-  "name": "beep",
+  "name": "rds",
   "version": "0.0.0",
-  "description": "BeepManager",
-  "main": "src/index.js",
+  "description": "Minimalistic React dev stack",
   "scripts": {
     "test": "jest"
   },
@@ -21,13 +20,15 @@
     "gulp": "~3.9.0",
     "gulp-util": "~3.0.6",
     "jest-cli": "~0.4.15",
-    "webpack-dev-server": "~1.10.1"
+    "webpack-dev-server": "~1.10.1",
+    "gulp-rename": "~1.2.2"
   },
   "dependencies": {
     "debug": "~2.2.0",
     "extract-text-webpack-plugin": "~0.8.2",
     "stylus-loader": "~1.2.1",
     "style-loader": "~0.12.3",
-    "css-loader": "~0.15.5"
+    "css-loader": "~0.15.5",
+    "gulp-clean": "~0.3.1"
   }
 }
