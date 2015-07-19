@@ -79,10 +79,3 @@ var app = new App({
 });
 
 app.renderToDOM(attachElement);
-
-if(module.hot){
-  module.hot.accept('./components/AppRoot', () => {
-    AppRoot = require('./components/AppRoot');
-    app.render(attachElement)
-  });
-}

@@ -18,7 +18,8 @@ export default {
     //new webpack.optimize.UglifyJsPlugin(),
     //new webpack.optimize.OccurenceOrderPlugin(),
     //new ExtractTextPlugin("styles.css"),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.styl'],
@@ -29,7 +30,7 @@ export default {
       {
         test: /src\/.+\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loaders: ['react-hot', 'babel']
       },
       {
         test: /src\/styles\/.+\.styl$/,
