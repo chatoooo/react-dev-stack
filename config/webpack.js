@@ -1,22 +1,24 @@
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpack from 'webpack';
- 
+import webpack from 'webpack'; 
 export default {
   entry: {
-    app: path.resolve(__dirname, '../src/app.js'),
-    vendor: ["react", "flux", "immutable"]
+    app: ["webpack/hot/dev-server", path.resolve(__dirname, '../src/app.js')],
+    //vendor: ["react", "flux", "immutable"]
   },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: 'app.js'
+    publicPath: '/assets/',
+    filename: '[name].js'
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"libs.js"),
+    //new webpack.optimize.CommonsChunkPlugin("init.js"),
+    //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"libs.js"),
     //new webpack.optimize.DedupePlugin(),
     //new webpack.optimize.UglifyJsPlugin(),
     //new webpack.optimize.OccurenceOrderPlugin(),
-    new ExtractTextPlugin("styles.css")
+    //new ExtractTextPlugin("styles.css"),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.styl'],
@@ -31,7 +33,7 @@ export default {
       },
       {
         test: /src\/styles\/.+\.styl$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader")
+        loader: "style-loader!css-loader!stylus-loader"
       }
     ]
   }

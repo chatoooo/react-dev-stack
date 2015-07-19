@@ -1,10 +1,11 @@
 import React from 'react/addons';
+import debug from 'debug'
+
+//can't use import for hot loading
+let AppRoot = require('./components/AppRoot');
+
 
 (window !== window.top ? window.top : window).React = React;
-
-import AppRoot from './components/AppRoot';
-
-import debug from 'debug'
 
 /*
  * @class App
@@ -78,3 +79,10 @@ var app = new App({
 });
 
 app.renderToDOM(attachElement);
+
+if(module.hot){
+  module.hot.accept('./components/AppRoot', () => {
+    AppRoot = require('./components/AppRoot');
+    app.render(attachElement)
+  });
+}

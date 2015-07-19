@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "Pingdom, Jan Schmied",
-  "license": "BSD-2-Clause",
+  "author": "Pingdom, T3, Jan Schmied",
+  "license": "MIT",
+  "repository": "https://github.com/chatoooo/react-dev-stack.git",
   "devDependencies": {
     "node-libs-browser": "~0.5.2",
     "webpack": "~1.10.1",
@@ -19,7 +20,8 @@
     "flux": "~2.0.3",
     "gulp": "~3.9.0",
     "gulp-util": "~3.0.6",
-    "jest-cli": "~0.4.15"
+    "jest-cli": "~0.4.15",
+    "webpack-dev-server": "~1.10.1"
   },
   "dependencies": {
     "debug": "~2.2.0",

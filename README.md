@@ -8,6 +8,7 @@ Minimalistic dev stack for React.js
  - Babel - ES6/JSX syntax
  - Webpack - Hot loading and styles in require()
  - Stylus
+ - Jest - unit testing
 
 ## Instalation
 ```sh
